@@ -4,7 +4,7 @@ import EditIcon from '@mui/icons-material/Edit';
 
 const PostItem = ({ post, onEdit }) => {
   return (
-    <Card sx={{ marginBottom: 2 }}>
+    <Card sx={{ marginBottom: 2}}>
       <CardContent>
         <Typography variant="h5" component="div">
           {post.title}

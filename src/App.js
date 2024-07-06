@@ -15,7 +15,7 @@ const App = () => {
   };
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" style={{"padding":"30px"}}>
       <Typography variant="h3" component="div" gutterBottom>
         WYLO Posts
       </Typography>
