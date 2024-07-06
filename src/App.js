@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Container, Typography } from '@mui/material';
+import CreatePost from './components/CreatePost';
+import PostsDisplay from './components/PostsDisplay';
 
-function App() {
+const App = () => {
+  const [postToEdit, setPostToEdit] = useState(null);
+
+  const handleEdit = (post) => {
+    setPostToEdit(post);
+  };
+
+  const clearEdit = () => {
+    setPostToEdit(null);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="md">
+      <Typography variant="h3" component="div" gutterBottom>
+        WYLO Posts
+      </Typography>
+      <CreatePost postToEdit={postToEdit} clearEdit={clearEdit} />
+      <PostsDisplay onEdit={handleEdit} />
+    </Container>
   );
-}
+};
 
 export default App;
